@@ -43,6 +43,7 @@
   <p>hi im osamason the best underground rapper </p>
   <input type="Name" id="Name" placeholder="Your Name">
   <input type="email" id="Email" placeholder="Your email">
+  <input type="favorite food" id="food" placeholder="Your favorite food">
   <input type="submit" id="submit">
   <script type="module">
     // Import the functions you need from the SDKs you need
@@ -71,6 +72,8 @@
 
 	const Name = document.querySelector("#Name") 
 	const Email = document.querySelector("#Email")
+	const food = document.querySelector("#food")
+
 	document.querySelector('#submit').addEventListener('click', Submit)
 	
 	
@@ -80,10 +83,12 @@
 	  set(ref(db, timestamp), {
 		  Name: Name.value,
 	      email: Email.value,
+ 	      food: food.value,
 	  });
 
 	  Name.value = ""
 	  Email.value = ""
+	  food.value = ""
 	}
 
 	function buildTimestamp() {
